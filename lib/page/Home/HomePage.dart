@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       // 解决键盘 https://api.flutter.dev/flutter/material/Scaffold/resizeToAvoidBottomInset.html
       //resizeToAvoidBottomPadding: false,
-      resizeToAvoidBottomInset: true,
+      //resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: const Text('CE.CCSL'),
         centerTitle: true,
