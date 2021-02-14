@@ -31,29 +31,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          // 解决键盘 https://api.flutter.dev/flutter/material/Scaffold/resizeToAvoidBottomInset.html
-          //resizeToAvoidBottomPadding: false,
-          resizeToAvoidBottomInset: true,
-          appBar: AppBar(
-            title: const Text('CE.CCSL'),
-            centerTitle: true,
-            actions: [
-              IconButton(
-                icon: Icon(Icons.login_outlined),
-                onPressed: () async {
-                  SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
-                  //String name = prefs.setString('Name', null);
-                  prefs.setString('Name', null);
-                  Get.offNamed('/Login');
-                  print('退出登录');
-                },
-              ),
-            ],
+    return Scaffold(
+      // 解决键盘 https://api.flutter.dev/flutter/material/Scaffold/resizeToAvoidBottomInset.html
+      //resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+        title: const Text('CE.CCSL'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.login_outlined),
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              //String name = prefs.setString('Name', null);
+              prefs.setString('Name', null);
+              Get.offNamed('/Login');
+              print('退出登录');
+            },
           ),
-          body: _body()),
+        ],
+      ),
+      body: _body(),
     );
   }
 
